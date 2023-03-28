@@ -1,0 +1,86 @@
+TABELLE: 
+
+
+Videogioco
+. ID_videogioco (chiave primaria, int)
+. Nome (varchar)
+. Trama (text)
+. Data di rilascio (date)
+. ID_software_house (chiave esterna, int)
+
+Software house
+. ID_software_house (chiave primaria, int)
+. Nome (varchar)
+. Partita IVA (varchar)
+. Città (varchar)
+. Nazione (varchar)
+
+Piattaforma
+. ID_piattaforma (chiave primaria, int)
+. Nome (varchar)
+. Città (varchar)
+. Nazione (varchar)
+
+Categoria
+. ID_categoria (chiave primaria, int)
+. Nome (varchar)
+
+Classificazione
+. ID_classificazione (chiave primaria, int)
+. Nome (varchar)
+
+Torneo
+. ID_torneo (chiave primaria, int)
+. Nome (varchar)
+. Anno (int)
+. Città (varchar)
+
+Giocatore
+. ID_giocatore (chiave primaria, int)
+. Nome (varchar)
+. Cognome (varchar)
+. Nickname (varchar)
+. Città (varchar)
+
+Recensione
+. ID_recensione (chiave primaria, int)
+. Titolo (varchar)
+. Testo (text)
+. Rating (int)
+. ID_giocatore (chiave esterna, int)
+. ID_videogioco (chiave esterna, int)
+
+Premio
+. ID_premio (chiave primaria, int)
+. Nome (varchar)
+. ID_videogioco (chiave esterna, int)
+. ID_categoria (chiave esterna, int)
+
+
+
+TABELLE PIVOT:
+
+
+Videogioco_Piattaforma
+. ID_videogioco (chiave esterna, intero)
+. ID_piattaforma (chiave esterna, intero)
+
+Videogioco_Categoria
+. ID_videogioco (chiave esterna, intero)
+. ID_categoria (chiave esterna, intero)
+
+Videogioco_Classificazione
+. ID_videogioco (chiave esterna, intero)
+. ID_classificazione (chiave esterna, intero)
+
+Torneo_Videogioco
+. ID_torneo (chiave esterna, intero)
+. ID_videogioco (chiave esterna, intero)
+
+Giocatore_Torneo
+. ID_giocatore (chiave esterna, intero)
+. ID_torneo (chiave esterna, intero)
+
+Giocatore_Videogioco
+. ID_giocatore (chiave esterna, intero)
+. ID_videogioco (chiave esterna, intero)
